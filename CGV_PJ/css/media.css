@@ -1,0 +1,215 @@
+@charset "utf-8";
+/* CGV PJ 미디어쿼리 CSS - media.css */
+
+/************** 1430px 이하 시작 **************/
+@media screen and (max-width:1430px) {
+    .part {
+        max-width: 800px;
+    }
+
+    #cont::before {
+        padding-top: 85%
+    }
+
+    #screen {
+        left: 15%;
+        width: 70%;
+        height: 55%;
+    }
+
+    .mlist img {
+        width: min(15vw, 150px);
+    }
+
+    .movtxt {
+        width: min(15vw, 150px);
+    }
+
+
+    #info address {
+        padding-top: 0px;
+    }
+
+    .footMenu ol>li {
+        margin-right: 9px;
+    }
+
+}
+
+/************** 1430px 이하 끝 **************/
+
+
+/************** 1230px 이하 시작 **************/
+@media screen and (max-width:1230px) {
+
+    #cont::before {
+        padding-top: 75%
+    }
+
+    .footMenu {
+        display: none;
+    }
+
+    .mlist img {
+        width: min(15vw, 130px);
+    }
+
+    .movtxt {
+        width: min(15vw, 130px);
+    }
+
+    ul.sns {
+        top: 30px;
+    }
+
+}
+
+/************** 1230px 이하 끝 **************/
+
+/************** 1000px 이하 시작 **************/
+@media screen and (max-width:1000px) {
+
+    #cont::before {
+        padding-top: 65%
+    }
+
+    .mlist img {
+        width: min(15vw, 110px);
+    }
+
+    .movtxt {
+        width: min(15vw, 110px);
+    }
+
+    .movtxt li {
+        width: min(18vw, 80px);
+        height: min(3vh, 40px);
+        line-height: min(2.8vh, 40px);
+    }
+
+    .part {
+        max-width: 700px;
+    }
+
+    ul.sns {
+        top: -20px;
+    }
+}
+
+/************** 1000px 이하 끝 **************/
+
+
+/************** 780px 이하 시작 **************/
+@media screen and (max-width:780px) {
+    .ham {
+        display: block;
+    }
+
+    .tit_sub {
+        display: none;
+    }
+
+    /* GNB ul */
+    .glist {
+        position: absolute;
+        width: 100px;
+        background: #fff;
+        border: 1px solid #000;
+        top: 60px;
+        right: 20px;
+        padding-top: 6px;
+        flex-direction: column;
+        /* 수직방향 */
+        align-items: flex-end;
+        /* 진행방향 수직으로 아래쪽(오른쪽) */
+        display: none;
+    }
+
+    .glist.on {
+        display: block;
+    }
+
+    /* 마우스 오버시 서브메뉴 숨기기 */
+    .glist>li:hover .smenu {
+        display: none;
+    }
+    .gnb>ul>li.sm::after {
+        display: none;
+     }
+
+
+    /* 메인영역 비율변경 */
+    #cont::before {
+        padding-top: 135%
+    }
+
+
+    /* 메인 배경 속성변경 */
+    #cont {
+        background-position: top;
+        /* 배경위치 top만 쓰면 가로는 자동 center */
+        background-size: 100%;
+        /* 배경크기에 수치를 하나만쓰면 
+        가로크기임(세로자동) */
+    }
+
+    /* 스크린 위치,크기조정 */
+    #screen {
+        left: 12%;
+        width: 76%;
+        height: 30%;
+    }
+    
+    /* 예고편 선택메뉴 */
+    .mlist {
+        width: 90vw;
+        /* 가로크기지정 */
+    }
+
+    /* ul 플렉스박스 */
+    .mlist ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .mlist ul>li {
+        margin: 10px;
+    }
+
+    .mlist img {
+        width: 23vw;
+        /* 한줄에 3개 오도록 크기조정 */
+    }
+
+    .movtxt {
+        width: 23vw;
+        /* 한줄에 3개 오도록 크기조정 */
+        font-size: 3vw;
+    }
+
+
+    .movtxt li {
+        width: 15vw;
+        height: 4vh;
+        line-height: 3.8vh;
+    }
+
+    #info address {
+        padding: 20px;
+    }
+    ul.sns{
+        position: relative;
+        top: 20px;
+        padding-bottom: 20px;
+        transform: translateX(40%);
+        /* 부모는? #info */
+    
+        display: flex;
+        /* 플렉스박스 */
+    
+    }
+}
+
+/************** 780px 이하 끝 **************/

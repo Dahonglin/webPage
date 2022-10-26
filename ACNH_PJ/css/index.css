@@ -1,0 +1,627 @@
+@charset "utf-8";
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap');
+
+/* font-family: 'Gamja Flower', cursive;
+font-family: 'Jua', sans-serif; */
+
+
+/********************* 공통 클래스 *********************/
+
+/* 전역 패딩, 마진 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* rem 사용을 위한 폰트 사이즈 초기화 */
+html {
+    font-size: 10px;
+}
+
+/* 헤딩 태그 글자 크기 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+/* 리스트 스타일 초기화 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 작업 가이드라인 */
+/* body * {
+    outline: 1px dashed green;
+} */
+
+/* 배경 이미지, 스크롤 바 x 숨김 */
+body {
+    background: url(../img/acnh01.png) no-repeat scroll 28% 65%/550px,
+        url(../img/acnh02.png) no-repeat scroll 68% 23%/400px,
+        /* 왼쪽 */
+        url(../img/acnh09.png) no-repeat scroll 2% 93%/190px,
+        /* 오른쪽 */
+        url(../img/acnh14.png) no-repeat scroll 98% 97%/190px,
+        url(../img/bg.jpg) no-repeat scroll top/cover;
+}
+
+/* 스크롤바 영역으로 인한 모바일 x 스크롤 없앰 */
+body.mobile::-webkit-scrollbar {
+    display: none !important;
+}
+
+body.mobile {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: visible !important;
+}
+
+/* 스크롤바 */
+.scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    /* 스크롤바 */
+    background-color: rgb(155, 155, 155);
+    border-radius: 3px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    /* 스크롤바 트랙 */
+    background-color: rgb(230, 230, 230);
+    border-radius: 3px;
+}
+
+/* 대체 텍스트 */
+.ir {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* a 태그 확장 */
+.a_ex {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* 숨기기 */
+.hidden {
+    display: none;
+}
+
+
+/************************************** 상단 영역 **************************************/
+
+/* 상단 박스 전체 영역 */
+#top {
+    position: relative;
+    width: 1400px;
+    height: 210px;
+    margin: 0 auto;
+}
+
+/* 링크 미리보기 이미지 테스트 */
+.preLogo {
+    position: absolute;
+    transform: scale(0);
+}
+
+/* 상단 로고 */
+.logo {
+    display: inline-block;
+    width: 270px;
+    height: 150px;
+    margin: 20px;
+    margin-left: 50px;
+    background: url(../img/logo.png) no-repeat;
+    background-size: 140%;
+    background-position: -50px 0;
+}
+
+/**************** 플레이어 디자인 자바스크립트 제어 *****************/
+/* 동물의숲 BGM */
+.bgm {
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    background: rgb(21, 163, 109);
+    margin-left: 740px;
+    top: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(17, 68, 57);
+    box-sizing: border-box;
+    font-family: 'Gamja Flower', cursive;
+}
+
+/* 재생버튼 */
+.bgm .play a {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    margin-left: 235px;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.685);
+}
+
+/* 일시정지버튼 */
+.bgm .pause a {
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    top: 4px;
+    margin-left: 255px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.685);
+}
+
+/* bgm 타이틀 */
+.bgm .bgmTit {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 5px;
+    margin-left: 10px;
+    text-shadow: 1px 0 rgb(17, 68, 57), -1px 0 rgb(17, 68, 57),
+        /* 글자 테두리 */
+        0 1px rgb(17, 68, 57), 0 -1px rgb(17, 68, 57);
+}
+
+
+/* gnb 메뉴 */
+.gnb {
+    position: absolute;
+    display: inline-block;
+    top: 70px;
+    margin-left: 50px;
+    width: 650px;
+    height: 50px;
+    background: url(../img/footer_bg_pc.png) no-repeat top/cover;
+    box-shadow: 1px 0 rgb(77, 51, 9), -1px 0 rgb(77, 51, 9),
+        0 1px rgb(77, 51, 9), 0 -1px rgb(77, 51, 9);
+    border-radius: 20px;
+    font-size: 2.4rem;
+}
+
+/* 상단 메뉴 실제 출력 부분 */
+.gnb>ul {
+    margin: 0 auto;
+    width: 579px;
+}
+
+
+/* 가상 요소로 클리어 */
+.gnb>ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 옆으로 흐르게 */
+.gnb>ul>li {
+    float: left;
+    padding: 0 23px;
+}
+
+/* 상단 메뉴 로고 클릭 부분 */
+.gnb a {
+    position: relative;
+    text-decoration: none;
+    line-height: 2.1;
+    height: 100%;
+    font-family: 'Jua', sans-serif;
+    color: #fff;
+    text-shadow: 1px 0 rgb(77, 51, 9), -1px 0 rgb(77, 51, 9),
+        /* 글자 테두리 */
+        0 1px rgb(77, 51, 9), 0 -1px rgb(77, 51, 9),
+        /* 글자 테두리 */
+        1px 1px 3px #000;
+    /* 글자 그림자 효과 */
+}
+
+.gnb a:hover {
+    top: 1px;
+    left: 1px;
+    text-shadow: 1px 0 rgb(77, 51, 9), -1px 0 rgb(77, 51, 9),
+        /* 글자 테두리 */
+        0 1px rgb(77, 51, 9), 0 -1px rgb(77, 51, 9);
+    /* 글자 테두리 */
+}
+
+/* 모바일용 햄버거 버튼 */
+.ham {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    margin-right: 20px;
+    font-size: 40px;
+    transform: scaleX(1.5);
+    /* 버튼 기본 디자인 없애기 */
+    background-color: transparent;
+    border: none;
+    /* 모바일 아닐때 안보임 */
+    display: none;
+}
+
+/* 버튼 모양 변경 위해 가상 요소로 내용 넣기 */
+.ham::before {
+    content: '≡';
+    color: #fff;
+}
+
+/* 크롬 브라우저 버튼 포커스 아웃라인 제거 */
+.ham:focus {
+    outline: none;
+}
+
+/* 상단 확장팩 배너 */
+.dlc {
+    float: right;
+    width: 200px;
+    height: 160px;
+    margin: 20px;
+    margin-right: 80px;
+    background: url(../img/dlc_logo.png) no-repeat -25px 20px / 125% 80%,
+                url(../img/dlc_tit.png) no-repeat 0 0px / 100% 35%;
+    /* background-size: 120%; */
+}
+
+/* dlc 타이틀 위치 */
+.dlc img {
+    position: relative;
+    top: 0px;
+    width: 200px;
+}
+
+.dlc {
+    animation: dlcAni 2s infinite 2s linear;
+}
+
+.dlc:hover {
+    animation: dlcOnAni .1s forwards ease-out;
+}
+
+/* 로고 평상시 좌우로 살짝 딸랑딸랑 움직임 구글 참조함 */
+@keyframes dlcAni {
+
+    0%,
+    50% {
+        transform: rotate(0deg);
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45% {
+        transform: rotate(2deg);
+    }
+
+    10%,
+    20%,
+    30%,
+    40% {
+        transform: rotate(-2deg);
+    }
+
+}
+
+
+/* 로고 오버 시 확대 */
+@keyframes dlcOnAni {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+
+
+/* 상단 E-shop 바로가기 버튼 */
+.eshop {
+    position: fixed;
+    right: 0;
+    top: 210px;
+    width: 50px;
+    height: 50px;
+    background: rgb(255, 125, 1);
+    border-radius: 8px 0 0 8px;
+    border: 3px solid rgb(255, 125, 1);
+    overflow: hidden;
+}
+
+.eshop .download {
+    position: absolute;
+    width: 130px;
+    height: 20px;
+    top: 15px;
+    left: 55px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 125, 1);
+}
+
+.eshop:hover {
+    transition: .12s ease-out;
+    background-color: #fff;
+    width: 200px;
+}
+
+
+/* eshop 아이콘 */
+.eshop span img {
+    margin: 12px;
+    margin-top: 10px;
+}
+
+.eshop span img:last-child {
+    display: none;
+}
+
+.eshop:hover span img:last-child {
+    display: inline;
+}
+
+.eshop:hover span img:first-child {
+    display: none;
+}
+
+/*********************************** 메인 영역 ***********************************/
+
+/* 겉박스 */
+#main {
+    width: 1400px;
+    min-height: 580px;
+    margin: 0 auto;
+}
+
+/* 속박스 */
+.cont {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+/* 컨텐츠 박스 크기 */
+.cbx {
+    width: 20%;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cbx::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 컨텐츠 박스 1 */
+.mainCt1 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_1.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:first-child:hover .mainCt1 {
+    background-image: url(../img/main_menu_1.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 컨텐츠 박스 2 */
+.mainCt2 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_2.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(2):hover .mainCt2 {
+    background-image: url(../img/main_menu_2.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 컨텐츠 박스 3 */
+.mainCt3 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_3.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(3):hover .mainCt3 {
+    background-image: url(../img/main_menu_3.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 컨텐츠 박스 4 */
+.mainCt4 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_4.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(4):hover .mainCt4 {
+    background-image: url(../img/main_menu_4.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 컨텐츠 박스 5 */
+.mainCt5 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_5.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(5):hover .mainCt5 {
+    background-image: url(../img/main_menu_5.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 설명글 박스 */
+.cdes {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: height .4s ease-out;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+
+/* 설명박스 배경 */
+.cdes.desBg1 {
+    background: url(../img/ctbg.jpg) no-repeat top/cover;
+}
+
+.cdes.desBg2 {
+    background: url(../img/ctbg2.jpg) no-repeat top/cover;
+}
+
+.cdes.desBg3 {
+    background: url(../img/ctbg3.jpg) no-repeat top/cover;
+}
+
+.cdes.desBg4 {
+    background: url(../img/ctbg4.jpg) no-repeat top/cover;
+}
+
+/* 설명글 위 낙엽 아이콘 */
+.cdes::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 85px;
+    top: 5px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/icon.png) no-repeat;
+}
+
+/* 설명글 */
+.cdes .mainSct {
+    width: 220px;
+    margin: 0 auto;
+    margin-top: 15%;
+    margin-left: 15px;
+    text-align: left;
+    line-height: 2.2rem;
+    font-size: 1.5rem;
+    font-family: 'Gamja Flower', cursive;
+}
+
+/* 설명글 내려옴 */
+.cbx:hover .cdes {
+    height: 250px;
+    margin-bottom: 10px
+}
+
+
+/*********************************** 하단 영역 ***********************************/
+
+/* 겉박스 */
+#info {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 60px;
+    background-image: url(../img/footer_bg_pc.png);
+    background-size: cover;
+}
+
+/* 속박스 */
+.info,
+.mInfo {
+    width: 569px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+/* 모바일 하단정보 */
+.mInfo {
+    display: none;
+}
+
+/* 하단정보 */
+.info ul>li,
+.mInfo ul>li {
+    float: left;
+    line-height: 1.55;
+    padding: 20px 0 20px 0;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+}
+
+.info ul>li:first-child,
+.mInfo ul>li:first-child {
+    margin-left: 0;
+}
+
+/* 하단정보 사이 bar */
+.info ul>li:nth-child(-n+4)::after {
+    content: '|';
+    color: #fff;
+    margin-left: 1rem;
+}
+
+.mInfo ul>li:first-child::after {
+    content: '|';
+    color: #fff;
+    margin-left: 1rem;
+}
+
+
+.info ul>li a,
+.mInfo ul>li a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+/* 하단 탑 버튼 */
+.top {
+    position: absolute;
+    top: -115px;
+    right: 20px;
+    width: 106px;
+    height: 156px;
+    background: url(../img/back-to-top-pc.png) no-repeat;
+    background-position: -12px 3px;
+}
