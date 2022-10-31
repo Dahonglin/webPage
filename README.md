@@ -28,11 +28,6 @@
 
 - #### 마우스 트래킹 모션 이미지
   - 마우스의 움직임에 따라 이미지가 움직이는 애니메이션<br>
-  `    let docStyle = document.body.style;
-    document.addEventListener('mousemove', (val) => {
-        docStyle.setProperty('--mouse-x', val.screenX);
-        docStyle.setProperty('--mouse-y', val.screenY);
-    });`
   - 마우스의 움직임을 입력받아 css 변경된 수치를 변수로 전달함.
 
 <br>
