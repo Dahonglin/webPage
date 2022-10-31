@@ -83,7 +83,13 @@ window.addEventListener("load",() => {
             // 2. 해당li요소 클래스 on넣기
             x.classList.add("on");
         }; ///////// click /////////
-    } ///////// for of ////////////////
+    }; ///////// for of ////////////////
 
+    document.querySelector('.ham').addEventListener('click', addClassOn);
+    const sub_navi = document.querySelector('.glist');
+
+    function addClassOn() {
+        sub_navi.classList.toggle('on');
+    }
 
 }); /////////// 로딩구역 /////////////////////
