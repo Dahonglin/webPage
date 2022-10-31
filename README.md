@@ -16,7 +16,7 @@
 
 #### 사이트 구현 내용
 
-![image](https://dahonglin.github.io/webPage/DalPaik_PJ/dalpaik_guide1.gif?raw=true)
+![image](./DalPaik_PJ/dalpaik_guide1.gif?raw=true)
 <br>
 
 - #### 텍스트 애니메이션
@@ -24,7 +24,7 @@
   - 라이브러리를 사용하여 사이트에 전체적으로 통일감 있는 애니메이션을 적용함.
 <br> <br> 
 
-![image](https://dahonglin.github.io/webPage/DalPaik_PJ/dalpaik_guide2.gif?raw=true)
+![image](./DalPaik_PJ/dalpaik_guide2.gif?raw=true)
 
 - #### 마우스 트래킹 모션 이미지
   - 마우스의 움직임에 따라 이미지가 움직이는 애니메이션<br>
@@ -37,7 +37,7 @@
 
 <br>
 
-![image](https://dahonglin.github.io/webPage/DalPaik_PJ/dalpaik_guide3.gif?raw=true)
+![image](./DalPaik_PJ/dalpaik_guide3.gif?raw=true)
 
 - #### 이미지 슬라이드
   - 기본적인 이미지 슬라이드 배너
@@ -45,7 +45,7 @@
 
 <br>
 
-![image](https://dahonglin.github.io/webPage/DalPaik_PJ/dalpaik_guide4.gif?raw=true)
+![image](./DalPaik_PJ/dalpaik_guide4.gif?raw=true)
 
 - #### 음료 이미지 슬라이드
   - 네비게이션 버튼 클릭 시 하단의 음료 이미지가 변경 됨.
@@ -54,7 +54,7 @@
 
 <br>
 
-![image](https://dahonglin.github.io/webPage/DalPaik_PJ/dalpaik_guide5.gif?raw=true)
+![image](./DalPaik_PJ/dalpaik_guide5.gif?raw=true)
 
 - #### 한글/영어 언어 변경
   - 상단의 KR/EN 버튼 클릭 시 사이트 언어 변경
